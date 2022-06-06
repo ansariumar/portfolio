@@ -51,7 +51,7 @@ header {
 
 .header-content {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(2, 1fr);		//This means "repeat 1fraction 2 times" equivalent to grid-template-column: 1fr 1fr
 	height: 100vh;
 
 	.left-header {
@@ -88,9 +88,9 @@ header {
    		 		}
    		 	}
 		}
-
-		
 	}
+		
+}
 
 	.right-header {
 		display: flex;
@@ -108,55 +108,52 @@ header {
 	}
 
 
-	.btn-con {
-		margin-top:3rem;
-		align-self: flex-start;
-	}
+	
+
+// #############--------------------------The ABOUT PAGE-------------------------------------------------#############
 
 
-	.main-btn{
-		border: 1px solid var(--color-white);
-	    color: inherit;
-	    border-radius: 30px;
-	    font-weight: 600;
-	    position: relative;
-	    display: flex;
-	    align-self: flex-start;
-	    align-items: center;
-	    overflow: hidden;
-	    transition: all .4s ease-in-out;
+.about-heading {
+	position: relative;
+    text-align: center;
 
-	    .btn-text {
-    	    padding: 0 2rem;
-	    }
+    h1 {
+    	font-weight: 700;
+    	font-size: 2rem;
 
-	   .btn-icon {
-	   	    background: var(--color-secondary);
-		    display: flex;
-		    justify-content: center;
-		    align-content: center;
-		    border-radius: 50%;
-		    padding: 1rem;
-	   }
+    	span {
+    		color: var(--color-secondary);
+    	}
 
-	   &::before {
-		   	content: '';
-		   	position: absolute;
-		   	top: 0px;
-		   	right: 0;
-		   	transform: translateX(100%);
-		   	transition: all .4s ease-in-out;
-		   	z-index: -1;
-	   }
+    	.bg-text {
+    		left: 50%;
+		    color: var(--color-grey-5);
+		    position: absolute;
+		    z-index: -1;
+		    transform: translate(-50%,-50%);
+		    font-weight: 800;
+		    top: 50%;
+		    font-size: 3rem;
+    	}
+    }
+}
 
-	   &:hover {
-		   	&::before {
-		   		width: 100%;
-		   		height: 100%;
-		   		background-color: var(--color-secondary);
-		   		transform: translateX(0%);
-		   	}
-	   }
+
+.about-conainer {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+
+	.right-about {
+		.square-grid{
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 1em;
+
+			.square {
+				border-radius: 10%;
+				border: 1px solid var(--color-grey-4);
+			}
+		}
 	}
 }
 
@@ -165,7 +162,22 @@ header {
 
 
 
-// #############---------------------------------------------------------------------------#############
+
+
+
+
+
+
+
+
+
+
+
+
+
+// #############-------------------------- --------------------------------------------------------------#############
+
+
 .active {
 	display: block !important; 
 	animation: scaleAnim 1s ease-in-out;
@@ -256,5 +268,60 @@ section {
 			pointer-events: none;
 		}
     }
+}
+
+
+
+// #############--------------------------REUSABLE INDEPENDENT ELEMENTS --------------------------------------------------------------#############
+
+
+.btn-con {
+	margin-top:3rem;
+	display: flex;
+	align-self: flex-start;
+	}
+
+
+.main-btn {
+	border: 1px solid var(--color-white);
+    color: inherit;				//The colour is actually on the whole main-btn div , that means on the whole rectangle div, so even if the border is round the colour overflow through them to the whole rectangle 
+    border-radius: 30px;
+    font-weight: 600;
+    position: relative;
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    overflow: hidden;				//solves the above problem
+    transition: all .4s ease-in-out;
+
+    .btn-text {
+	    padding: 0 2rem;
+    }
+
+   .btn-icon {
+   	    background: var(--color-secondary);
+	    display: flex;
+	    justify-content: center;
+	    align-content: center;
+	    border-radius: 50%;
+	    padding: 1rem;
+   }
+
+   &::before {			//this makes a span tag before the main-btn inside the btn-cont
+	   	content: '';	//whose content is aparently nothing (I wrote fuck, just for understanding purpose, for SCIENCE OFCOURCE!!!! )
+	   	position: absolute;		//making the span tag stick to a good position
+	   	transform: translateX(100%);	//translate 100% is what makes this span tag go to the left side for animation when we make translate 0%
+	   	transition: all .4s ease-in-out;
+	   	z-index: -1;			//the green span tag should not cover the written shits
+   }
+
+   &:hover {
+	   	&::before {
+	   		width: 100%;
+	   		height: 100%;
+	   		background-color: var(--color-secondary);
+	   		transform: translateX(0%);
+	   	}
+   }
 }
 
