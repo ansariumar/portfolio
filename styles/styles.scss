@@ -113,32 +113,6 @@ header {
 // #############--------------------------The ABOUT PAGE-------------------------------------------------#############
 
 
-.about-heading {
-	margin-bottom: 2rem;
-	position: relative;
-    text-align: center;
-
-    h1 {
-    	font-weight: 700;
-    	font-size: 2rem;
-
-    	span {
-    		color: var(--color-secondary);
-    	}
-
-    	.bg-text {
-    		left: 50%;
-		    color: var(--color-grey-5);
-		    position: absolute;
-		    z-index: -1;
-		    transform: translate(-50%,-50%);
-		    font-weight: 800;
-		    top: 50%;
-		    font-size: 3rem;
-    	}
-    }
-}
-
 
 .about-conainer {
 	display: grid;
@@ -150,9 +124,8 @@ header {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			grid-gap: 1em;
-			grid-auto-columns: minmax(600px,auto);
-    		grid-auto-rows:	minmax(100px,auto);
-				// transition: all .4s ease-in-out;
+			grid-auto-columns: minmax(auto,auto);
+    		grid-auto-rows:	minmax(auto,auto);
 
 			.about-square {
 				padding: 1.5em;
@@ -171,6 +144,7 @@ header {
 					font-size: 1.7em;
 					font-weight: 900;
 					font-family: monospace;
+					text-align: center;
 				}
 
 				.small-txt {
@@ -190,8 +164,63 @@ header {
 
 
 
+// #############--------------------------The PROTFOLIO PAGE-------------------------------------------------#############
 
 
+
+
+.portfolio-middle {
+	text-align: center;
+}
+
+.portfolios {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 1em;
+	margin-top: 3rem;
+	
+	.portfolio-item {
+		width: 100%;
+		height: auto;
+		position: relative;
+
+		.port-img {
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+			grid-auto-columns: 200px ;	
+		}
+
+		.overlay {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			opacity: 0;
+			color: var(--color-white);
+			background-color: var(--color-secondary);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			transition: all .4s ease-in-out;
+			
+		}
+
+		&:hover {
+			.overlay {
+				opacity: 1;
+			}
+		}
+	}
+	
+		
+
+	
+}
 
 
 
@@ -300,6 +329,11 @@ section {
 // #############--------------------------REUSABLE INDEPENDENT ELEMENTS --------------------------------------------------------------#############
 
 
+
+
+ 		//#############----------------------the Animated Button(used in section 1 and 2)----------------#############
+
+
 .btn-con {
 	margin-top:2rem;
 	display: flex;
@@ -350,3 +384,35 @@ section {
    }
 }
 
+
+
+
+ 		//#############--------------------------the HEADING OF 4 SECTIONS----------------------------#############
+
+
+
+.about-heading {
+	margin-bottom: 2rem;
+	position: relative;
+    text-align: center;
+
+    h1 {
+    	font-weight: 700;
+    	font-size: 2rem;
+
+    	span {
+    		color: var(--color-secondary);
+    	}
+
+    	.bg-text {
+    		left: 50%;
+		    color: var(--color-grey-5);
+		    position: absolute;
+		    z-index: -1;
+		    transform: translate(-50%,-50%);
+		    font-weight: 800;
+		    top: 50%;
+		    font-size: 3rem;
+    	}
+    }
+}
