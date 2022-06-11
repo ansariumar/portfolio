@@ -183,11 +183,13 @@ header {
 		width: 100%;
 		height: auto;
 		position: relative;
-
+		height: 172px;
+		border-radius: 12px;
+		overflow: hidden;
 		.port-img {
 			width: 100%;
 			height: auto;
-			object-fit: cover;
+			object-fit: all;
 			grid-auto-columns: 200px ;	
 		}
 
@@ -207,7 +209,32 @@ header {
 			align-items: center;
 			flex-direction: column;
 			transition: all .4s ease-in-out;
+
+			h3 {
+				margin-top: 1rem;
+			}
 			
+			.icons {
+				background-color: var(--color-primary);
+				border-radius: 50%;
+				width: 40px;
+				height: 40px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0 1rem;
+				transition: all .4s ease-in-out	;
+
+				&:hover {
+					background-color: var(--color-white);
+					i {
+						color: var(--color-primary);
+					}
+				}
+			} 
+			h2 {
+			
+			}
 		}
 
 		&:hover {
@@ -223,8 +250,74 @@ header {
 }
 
 
+// #############--------------------------The BLOG PAGE-------------------------------------------------#############
 
 
+
+
+
+.blogs {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-auto-rows: minmax(auto,auto);
+	grid-gap: 1em;
+	margin-top: 3rem;
+
+	.blog-item {
+		width: 100%;
+		height: auto;
+		position: relative;
+		// overflow: hidden;
+		object-fit: cover;
+		background-color: var(--color-grey-5);
+		transition: all .4s ease-in-out;
+
+		.image {
+			transition: all .4s ease-in-out;
+			background: var(--color-secondary);
+
+			img {
+				border-top-right-radius: 10px;
+				border-top-left-radius: 10px;
+				width: 100%;
+			}
+		}
+
+		.blog-text {
+			color: var(--color-grey-1);
+			transition: all .4s ease-in-out;
+			padding: .7em;
+
+			h2 {
+				font-weight: bolder;
+				font-family: sans-serif;
+				transition: all .4s ease-in-out;
+				&:hover {
+					color: var(--color-secondary);
+				}
+			}
+			
+
+			p {
+				font-size: .9em;
+    			color: var(--color-grey-2);				
+			}
+
+		}
+
+		&:hover {
+			.image {
+				transform: translateY(-5px);
+				transform: scale(1.05);
+				background-color: var(--color-grey-5);
+			}
+
+			.blog-text {
+				transform: translateY(-6px);
+			}
+		}
+	}
+}
 
 
 
@@ -252,7 +345,7 @@ section {
 	position: absolute;
 	left: 0;
 	top: 0;
-	padding: 3rem 18rem;
+	padding: 3rem 13rem;
 }
 
 .section {
