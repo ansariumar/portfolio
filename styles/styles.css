@@ -58,18 +58,18 @@ header {
   clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%); }
 
 .header-content .left-header .image {
-  background-color: var(--color-black);
+  background-color: none;
   margin-left: 4rem;
   height: 90%;
   border-radius: var(--br-sm-2);
-  width: 60%;
-  transition: all .4s ease-in-out; }
+  width: 60%; }
 
 .header-content .left-header .image img {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  filter: grayscale(100%); }
+  filter: grayscale(100%);
+  transition: all .4s ease-in-out; }
 
 .header-content .left-header .image img:hover {
   filter: grayscale(0%); }
@@ -79,9 +79,6 @@ header {
   flex-direction: column;
   justify-content: center;
   margin-right: 6rem; }
-
-.right-header .name {
-  color: var(--color-secondary); }
 
 .right-header p {
   line-height: 2rem; }
@@ -163,23 +160,6 @@ header {
 .portfolios .portfolio-item .overlay h3 {
   margin-top: 1rem; }
 
-.portfolios .portfolio-item .overlay .icons {
-  background-color: var(--color-primary);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 1rem;
-  transition: all .4s ease-in-out; }
-
-.portfolios .portfolio-item .overlay .icons:hover {
-  background-color: var(--color-white); }
-
-.portfolios .portfolio-item .overlay .icons:hover i {
-  color: var(--color-primary); }
-
 .portfolios .portfolio-item:hover .overlay {
   opacity: 1; }
 
@@ -231,6 +211,45 @@ header {
 
 .blogs .blog-item:hover .blog-text {
   transform: translateY(-6px); }
+
+.contacts h2 {
+  margin-bottom: 1rem; }
+
+.contacts p {
+  margin-bottom: 20px; }
+
+.contacts .information {
+  font-size: 20px; }
+
+.contacts .info {
+  display: flex;
+  justify-content: space-between;
+  transition: all .4s ease-in-out;
+  border-radius: 12px;
+  padding: 10px; }
+
+.contacts .info .icon i {
+  margin-right: 1rem; }
+
+.contacts .info:hover {
+  background-color: var(--color-secondary);
+  transform: scale(1.05); }
+
+.contacts .social-media {
+  margin-top: 1rem;
+  display: flex;
+  margin-right: 1rem; }
+
+.contacts .social-media .icons {
+  background-color: var(--color-grey-4);
+  overflow: hidden; }
+
+.contacts .social-media .icons i {
+  transition: all .4s ease-in-out; }
+
+#upwork-icon {
+  width: 35px;
+  margin-top: 10px; }
 
 .active {
   display: block !important;
@@ -380,3 +399,24 @@ section {
   font-weight: 800;
   top: 50%;
   font-size: 3rem; }
+
+.icons {
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 1rem;
+  transition: all .4s ease-in-out; }
+
+.icons:hover {
+  background-color: var(--color-white);
+  cursor: pointer; }
+
+.icons:hover i {
+  color: var(--color-primary); }
+
+.highlight {
+  color: var(--color-secondary); }

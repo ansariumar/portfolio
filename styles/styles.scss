@@ -46,7 +46,7 @@ header {
 
 
 
-// #############--------------------------The home/header content-------------------------------#############
+// #############--------------------------THE HOME PAGE-------------------------------#############
 
 
 .header-content {
@@ -71,18 +71,20 @@ header {
 		}		
 
 		.image {
-			background-color: var(--color-black);
+			background-color: none;
 	    	margin-left: 4rem;
     		height: 90%;
 	    	border-radius: var(--br-sm-2);
     		width: 60%;
-   		 	transition: all .4s ease-in-out;
+   		 	
 
    		 	img{
    		 		height: 100%;
    		 		width: 100%;
    		 		object-fit: cover;
    		 		filter: grayscale(100%);
+   		 		transition: all .4s ease-in-out;
+   		 		
    		 		&:hover {
    		 			filter: grayscale(0%);
    		 		}
@@ -98,10 +100,6 @@ header {
     	justify-content: center;
     	margin-right: 6rem;
 
-    	.name {
-    		color: var(--color-secondary);
-    	}
-
     	p {
     		line-height: 2rem;
     	}
@@ -110,7 +108,7 @@ header {
 
 	
 
-// #############--------------------------The ABOUT PAGE-------------------------------------------------#############
+// #############--------------------------The ABOUT PAGE---------------------------------------#############
 
 
 
@@ -164,7 +162,7 @@ header {
 
 
 
-// #############--------------------------The PROTFOLIO PAGE-------------------------------------------------#############
+// #############--------------------------The PROTFOLIO PAGE-----------------------------------#############
 
 
 
@@ -214,24 +212,7 @@ header {
 				margin-top: 1rem;
 			}
 			
-			.icons {
-				background-color: var(--color-primary);
-				border-radius: 50%;
-				width: 40px;
-				height: 40px;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				margin: 0 1rem;
-				transition: all .4s ease-in-out	;
-
-				&:hover {
-					background-color: var(--color-white);
-					i {
-						color: var(--color-primary);
-					}
-				}
-			} 
+			 
 			h2 {
 			
 			}
@@ -250,7 +231,7 @@ header {
 }
 
 
-// #############--------------------------The BLOG PAGE-------------------------------------------------#############
+// #############--------------------------The BLOG PAGE------------------------------------------#############
 
 
 
@@ -318,6 +299,69 @@ header {
 		}
 	}
 }
+
+
+
+
+// #############--------------------------The CONTACT PAGE-------------------------------------#############
+
+
+.contacts {
+	h2 {
+		margin-bottom: 1rem;
+	}
+
+	p {
+		margin-bottom: 20px;
+	}
+
+	.information {
+		font-size: 20px;
+	}
+
+	.info {
+		display: flex;
+		justify-content: space-between;
+		transition: all .4s ease-in-out;
+		border-radius: 12px;
+		padding: 10px;
+
+		.icon {
+
+			i {
+				margin-right: 1rem;
+			}
+		}
+
+		&:hover {
+			background-color: var(--color-secondary);
+			transform: scale(1.05);
+		}
+	}
+
+	.social-media {
+		margin-top: 1rem;
+		display: flex;
+		margin-right: 1rem;
+
+		.icons {
+			background-color: var(--color-grey-4);
+			overflow: hidden;
+
+			i {
+				transition: all .4s ease-in-out;
+			}
+		}
+	}
+}
+
+
+
+#upwork-icon {
+	width: 35px;
+	margin-top:  10px;
+}
+
 
 
 
@@ -480,8 +524,7 @@ section {
 
 
 
- 		//#############--------------------------the HEADING OF 4 SECTIONS----------------------------#############
-
+ 		//#############------------------the HEADING OF LAST 4 SECTIONS----------------------#############
 
 
 .about-heading {
@@ -509,3 +552,33 @@ section {
     	}
     }
 }
+
+
+
+// ###----TO ANIMATE ICONS AND CORRECT THEIR SIZE----###
+
+.icons {
+	background-color: var(--color-primary);
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 1rem;
+	transition: all .4s ease-in-out	;
+
+	&:hover {
+		background-color: var(--color-white);
+		cursor: pointer;
+	i {
+		color: var(--color-primary);
+	  }
+	}
+}
+
+// ###----TO HIGLIGHT WORDS----###
+
+.highlight {
+    		color: var(--color-secondary);
+    	}
